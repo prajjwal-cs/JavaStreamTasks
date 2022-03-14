@@ -4,7 +4,7 @@ Author: Prajjwal Pachauri(cypher)
 Date: 13-03-2022
 Time: 13:32
 File: Student.java */
-package task1;
+package task1.implementation;
 
 import java.util.Objects;
 
@@ -29,11 +29,11 @@ public class Student {
         this.rollNumber = rollNumber;
     }
 
-    public String getFIRST_NAME() {
+    public String getFirstName() {
         return FIRST_NAME;
     }
 
-    public String getLAST_NAME() {
+    public String getLastName() {
         return LAST_NAME;
     }
 
