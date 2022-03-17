@@ -9,9 +9,9 @@ package task1.implementation;
 import java.util.Objects;
 
 public class Student {
-    private byte rollNumber;
     private final String FIRST_NAME;
     private final String LAST_NAME;
+    private byte rollNumber;
     private byte currentYear;
 
     public Student(byte rollNumber, String firstName, String lastName, byte currentYear) {
@@ -60,11 +60,6 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "rollNumber=" + rollNumber +
-                ", FIRST_NAME='" + FIRST_NAME + '\'' +
-                ", LAST_NAME='" + LAST_NAME + '\'' +
-                ", currentYear=" + currentYear +
-                '}';
+        return "Student{" + "rollNumber=" + rollNumber + ", FIRST_NAME='" + FIRST_NAME + '\'' + ", LAST_NAME='" + LAST_NAME + '\'' + ", currentYear=" + currentYear + '}';
     }
 }
