@@ -3,26 +3,36 @@
 Author: Prajjwal Pachauri(cypher)
 Date: 13-03-2022
 Time: 13:43
-File: PortalCredentialsCreator.java */
+File: PortalCredentialsCreator.java
+
+*/
 package task1.implementation;
 
-import java.util.ArrayList;
+import org.apache.commons.lang3.RandomStringUtils;
+
 import java.util.List;
-import java.util.function.Function;
 
 public class PortalCredentialsCreator {
-    public List<UserName> createListOfUserNames(List<Student> studentsList) {
-        List<UserName> usernames = new ArrayList<>();
-        Function<Student, String> mappingUsernames = student ->
-                    student.getFirstName().concat(".").
-                        concat(student.getLastName()).concat("_cs19");
 
-        usernames = (List<UserName>) studentsList.stream().map(mappingUsernames);
-        return usernames;
+    private UserName createUsername(Student student) {
+        var firstName = student.getFirstName();
+        var lastName = student.getLastName();
+        var rollNumber = student.getRollNumber();
+
+        var userName = String.format("%s.%s.%d", firstName, lastName, rollNumber);
+
+        return new UserName(userName);
+    }
+
+    public List<UserName> createListOfUserNames(List<Student> studentsList) {
+        return studentsList.stream().map(this::createUsername).toList();
+    }
+
+    private String createPassword(Student student) {
+        return RandomStringUtils.randomAlphanumeric(14);
     }
 
     public List<PassWord> createListOfRandomPasswords(List<Student> studentsList) {
-        return (List<PassWord>) studentsList.stream().map(s -> s.getFirstName().
-                concat(String.valueOf(s.getRollNumber())));
+        return studentsList.stream().map(this::createPassword).map(PassWord::new).toList();
     }
 }

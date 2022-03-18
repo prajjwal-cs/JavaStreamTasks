@@ -9,11 +9,7 @@ package task1.implementation;
 public class UserName {
     private String userName;
 
-    public String getUserName() {
-        return userName;
-    }
-
-    public void setUserName(String userName) {
+    public UserName(String userName) {
         this.userName = userName;
     }
 }
