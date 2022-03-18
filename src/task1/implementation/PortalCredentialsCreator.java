@@ -18,8 +18,9 @@ public class PortalCredentialsCreator {
         var firstName = student.getFirstName();
         var lastName = student.getLastName();
         var rollNumber = student.getRollNumber();
+        var currentYear = student.getCurrentYear();
 
-        var userName = String.format("%s.%s.%d", firstName, lastName, rollNumber);
+        var userName = String.format("%s.%s.%d.%d", firstName, lastName, rollNumber, currentYear);
 
         return new UserName(userName);
     }

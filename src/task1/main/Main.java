@@ -28,6 +28,8 @@ public class Main {
 
         PortalCredentialsCreator portalCredentialsCreator = new PortalCredentialsCreator();
         userNameList = portalCredentialsCreator.createListOfUserNames(studentList);
-        System.out.println("userNameList.stream() = " + userNameList);
+        for (int index = 0; index < userNameList.size(); index++) {
+            System.out.println(userNameList.get(index));
+        }
     }
 }
