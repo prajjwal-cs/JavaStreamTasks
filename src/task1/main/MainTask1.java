@@ -6,6 +6,7 @@ Time: 22:39
 File: Main.java */
 package task1.main;
 
+import task1.implementation.PassWord;
 import task1.implementation.PortalCredentialsCreator;
 import task1.implementation.Student;
 import task1.implementation.UserName;
@@ -13,7 +14,7 @@ import task1.implementation.UserName;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class MainTask1 {
     public static void main(String[] args) {
         Student student1 = new Student((byte) 30, "Prajjwal", "Pachauri", (byte) 3);
         Student student2 = new Student((byte) 35, "Sachin", "Kumar", (byte) 3);
@@ -28,8 +29,10 @@ public class Main {
 
         PortalCredentialsCreator portalCredentialsCreator = new PortalCredentialsCreator();
         userNameList = portalCredentialsCreator.createListOfUserNames(studentList);
-        for (int index = 0; index < userNameList.size(); index++) {
-            System.out.println(userNameList.get(index));
-        }
+//        studentList.forEach(System.out::println);
+//        userNameList.forEach(System.out::println);
+
+        List<PassWord> passwords = portalCredentialsCreator.createListOfRandomPasswords(studentList);
+        passwords.forEach(System.out::println);
     }
 }
